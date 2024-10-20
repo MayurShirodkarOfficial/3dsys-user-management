@@ -15,7 +15,13 @@ const PORT = process.env.PORT;
 
 
 // Middleware for CORS and JSON parsing
-app.use(cors());
+const corsOptions = {
+    origin: 'https://3dsys-user-management.vercel.app',
+    methods: ['GET', 'POST', 'PUT', 'DELETE'], 
+    credentials: true
+};
+
+app.use(cors(corsOptions));
 app.use(bodyParser.json());
 
 
